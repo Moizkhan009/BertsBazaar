@@ -14,11 +14,10 @@ export class FlashsaleComponent {
   allproducts:any;
 
 
-  constructor(private http:HttpClient){}
+  constructor(public http:HttpClient){}
 
   ngOnInit(){
 
-    console.log("this fuction is working")
     this.http.get("https://dummyjson.com/products").subscribe((data)=>{
 
     let{products}:any=data

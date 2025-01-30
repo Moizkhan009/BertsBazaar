@@ -9,10 +9,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
+import { AllProductsComponent } from './pages/all-products/all-products.component';
 
 @Component({
   selector: 'app-root',
-  imports:[RouterOutlet,NavbarComponent,HomeComponent,FooterComponent,LoginComponent,RegisterComponent,ContactComponent,AboutComponent],
+  imports:[RouterOutlet,NavbarComponent,HomeComponent,FooterComponent,LoginComponent,RegisterComponent,ContactComponent,AboutComponent,AllProductsComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

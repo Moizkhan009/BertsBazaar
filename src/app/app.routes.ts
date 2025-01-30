@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { AllProductsComponent } from './pages/all-products/all-products.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ component:ContactComponent,
   {
     path:"privacy&policy",
     component:PrivacyComponent,
+  },
+  {
+    path:"allproducts",
+    component:AllProductsComponent
   }
 ];
 
