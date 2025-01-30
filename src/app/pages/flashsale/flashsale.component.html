@@ -1,0 +1,113 @@
+<style>
+
+  .animate-marquee {
+    display: flex;
+    animation: scroll-left 15s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-wrapper {
+    display: flex;
+    overflow:hidden;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<div class="bg-gradient-to-r from-amber-800 via-orange-500 to-amber-800 py-4">
+  <div class="marquee-wrapper">
+    <div class="animate-marquee space-x-10">
+      <!-- Content Block Repeated for Continuous Effect -->
+      <div class="flex space-x-10">
+        <span class="text-white text-lg font-semibold">
+          🎉 Welcome to <span class="font-bold uppercase">Berts Bazaar!</span> Your One-Stop Shop for Everything!
+        </span>
+
+        <span class="text-white text-lg font-semibold">
+          🛍️ Mega Sale: Up to <span class="font-bold">50% OFF</span> on Selected Items!
+        </span>
+
+        <span class="text-white text-lg font-semibold">
+          🚚 Enjoy <span class="font-bold">Free Shipping</span> on Orders Above $99!
+        </span>
+
+        <span class="text-white text-lg font-semibold">
+          🔥 Exclusive Deals for Limited Time! Shop Now!
+        </span>
+      </div>
+
+      <!-- Duplicate Content for Seamless Scrolling -->
+      <div class="flex space-x-10">
+        <span class="text-white text-lg font-semibold">
+          🎉 Welcome to <span class="font-bold uppercase">Berts Bazaar!</span> Your One-Stop Shop for Everything!
+        </span>
+
+        <span class="text-white text-lg font-semibold">
+          🛍️ Mega Sale: Up to <span class="font-bold">50% OFF</span> on Selected Items!
+        </span>
+
+        <span class="text-white text-lg font-semibold">
+          🚚 Enjoy <span class="font-bold">Free Shipping</span> on Orders Above $99!
+        </span>
+
+        <span class="text-white text-lg font-semibold">
+          🔥 Exclusive Deals for Limited Time! Shop Now!
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="bg-gray-50 py-10">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Flash Sale</h2>
+
+    <!-- Grid Container -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+
+      <!-- Product Card (Loop through allproducts) -->
+      <div *ngFor="let product of allproducts" class="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+        <img [src]="product.thumbnail" [alt]="product.title" class="w-full h-48 object-cover">
+
+        <div class="p-4">
+          <a href="#" class="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm font-bold text-gray-800 mb-2 ">{{product.title}}</a>
+          <!-- <p class="text-gray-600 text-sm mb-4">{{product.description}}</p> -->
+
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-xl font-semibold text-orange-500">${{product.price}}</span>
+            <span class="text-sm text-red-700 line-through">{{product.discountPercentage}}% off</span>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <span class="text-green-500 font-semibold">Rating:{{product.rating}}</span>
+            <!-- <span class="text-sm text-gray-500">{{product.category}}</span> -->
+          </div>
+
+          <!-- <button class="w-full bg-orange-500 text-white py-2 rounded-lg mt-4 hover:bg-orange-600 focus:outline-none focus:ring focus:ring-orange-200 transition duration-300">
+            Add to Cart
+          </button> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
