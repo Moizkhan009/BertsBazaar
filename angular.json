@@ -28,6 +28,7 @@
             ],
             "styles": [
               "src/styles.css"
+
             ],
             "scripts": []
           },
@@ -79,9 +80,11 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              
               {
                 "glob": "**/*",
                 "input": "public"
+
               }
             ],
             "styles": [

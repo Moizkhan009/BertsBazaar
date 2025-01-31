@@ -29,7 +29,7 @@ component:ContactComponent,
     component:PrivacyComponent,
   },
   {
-    path:"allproducts",
+    path:"products",
     component:AllProductsComponent
   }
 ];

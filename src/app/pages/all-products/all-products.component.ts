@@ -6,25 +6,19 @@ import { Component } from '@angular/core';
   selector: 'app-all-products',
   imports: [NgFor],
   templateUrl: './all-products.component.html',
-  styleUrl: './all-products.component.css'
+  styleUrls: ['./all-products.component.css']
 })
 export class AllProductsComponent {
 
+  allproducts: any;
 
-  allproducts:any;
-  
-  
-    constructor(private http:HttpClient){}
-  
-    ngOnInit(){
-  
-      this.http.get("https://dummyjson.com/products").subscribe((data)=>{
-  
-      let{products}:any=data
-  
-      this.allproducts = products
-  
-    })
-    }
+  constructor(private http: HttpClient) {}
 
+  ngOnInit() {
+    this.http.get("https://fakestoreapi.com/products").subscribe((data) => {
+      this.allproducts = data;
+    }, (error) => {
+      console.error("Error fetching products", error);
+    });
+  }
 }

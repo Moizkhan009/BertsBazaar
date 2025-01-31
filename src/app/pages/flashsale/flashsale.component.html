@@ -1,3 +1,6 @@
+
+
+
 <style>
 
   .animate-marquee {
@@ -20,6 +23,7 @@
     }
   }
 </style>
+
 
 <div class="bg-gradient-to-r from-amber-800 via-orange-500 to-amber-800 py-4">
   <div class="marquee-wrapper overflow-hidden">
@@ -73,42 +77,43 @@
 
 
 
+<section class="relative bg-gradient-to-r from-green-100 via-gray-50 to-gray-100 py-10">
+  <div class="container mx-auto px-4 relative">
+    <!-- Flash Sale Wrapper with Shape -->
+    <div class="relative bg-gradient-to-r from-orange-50 to-white rounded-xl shadow-lg overflow-hidden p-8 transform hover:scale-105 transition-transform duration-300">
 
+      <!-- Decorative Shape Element -->
+      <div class="absolute -top-5 -left-5 w-20 h-20 bg-orange-200 opacity-50 rounded-full"></div>
+      <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-green-300 opacity-40 rounded-full"></div>
 
+      <h2 class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-left text-orange-600 tracking-wide relative z-10">
+        Flash Sale
+      </h2>
+      <p class="text-gray-500 text-sm mt-2 italic relative z-10">Exclusive deals for a limited time!</p>
+    </div>
 
-
-
-<section class="bg-gray-50 py-10">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Flash Sale</h2>
-
-    <!-- Grid Container -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-
-      <!-- Product Card (Loop through allproducts) -->
+    <!-- Products Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-10">
+      <!-- Product Card -->
       <div *ngFor="let product of allproducts" class="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-        <img [src]="product.thumbnail" [alt]="product.title" class="w-full h-48 object-cover">
+        <img [src]="product.thumbnail" [alt]="product.title" class="w-full h-48 object-cover" loading="lazy">
 
         <div class="p-4">
-          <a href="#" class="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm font-bold text-gray-800 mb-2 ">{{product.title}}</a>
-          <!-- <p class="text-gray-600 text-sm mb-4">{{product.description}}</p> -->
-
+          <a href="#" class="text-sm font-bold text-gray-800 mb-2 block">{{ product.title }}</a>
           <div class="flex justify-between items-center mb-3">
-            <span class="text-xl font-semibold text-orange-500">${{product.price}}</span>
-            <span class="text-sm text-red-700 line-through">{{product.discountPercentage}}% off</span>
+            <span class="text-xl font-semibold text-orange-500">${{ product.price }}</span>
+            <span class="text-sm text-red-700 line-through">{{ product.discountPercentage }}% off</span>
           </div>
-
           <div class="flex justify-between items-center">
-            <span class="text-green-500 font-semibold">Rating:{{product.rating}}</span>
-            <!-- <span class="text-sm text-gray-500">{{product.category}}</span> -->
+            <span class="text-green-500 font-semibold">Rating: {{ product.rating }}</span>
+            <span class="text-sm text-gray-500">{{ product.category }}</span>
           </div>
-
-          <!-- <button class="w-full bg-orange-500 text-white py-2 rounded-lg mt-4 hover:bg-orange-600 focus:outline-none focus:ring focus:ring-orange-200 transition duration-300">
-            Add to Cart
-          </button> -->
         </div>
       </div>
-
     </div>
   </div>
 </section>
+
+
+
+

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,7 +12,18 @@ import { AllProductsComponent } from './pages/all-products/all-products.componen
 
 @Component({
   selector: 'app-root',
-  imports:[RouterOutlet,NavbarComponent,HomeComponent,FooterComponent,LoginComponent,RegisterComponent,ContactComponent,AboutComponent,AllProductsComponent],
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    NavbarComponent,
+    HomeComponent,
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent,
+    ContactComponent,
+    AboutComponent,
+    AllProductsComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
